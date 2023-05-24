@@ -22,7 +22,7 @@ int main(int ac, char **av, char **envp)
 	while (1)
 	{
 		printf("%s", cue);
-		save_prompt = _getline(&line_getter, &num, stdin);
+		save_prompt = getline(&line_getter, &num, stdin);
 		if (save_prompt == -1)
 		{
 			printf("Exiting the shell ...........\n");
