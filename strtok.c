@@ -8,7 +8,7 @@
  * Return: value of string
  */
 
-char* _strtok(char *str, const char *delim)
+char *_strtok(char *str, const char *delim)
 {
 	static char *token;
 	char *start = (str != NULL) ? str : token;
