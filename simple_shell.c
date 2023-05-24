@@ -5,6 +5,7 @@ char **fill_argv(char *line, int tok_count, char **av);
  * main - simple shell
  * @ac: argument count
  * @av: argument vector/array
+ * @envp: environment variables
  * Return: 0 on success or 1 on failure
  */
 int main(int ac, char **av, char **envp)
@@ -49,6 +50,13 @@ int main(int ac, char **av, char **envp)
 	return (0);
 }
 
+/**
+ * fill_argv - fills argv with tokens
+ * @line: pointer containing commands
+ * @tok_count: total count of tokens
+ * @av: argv
+ * Return: retuns argv
+ */
 char **fill_argv(char *line, int tok_count, char **av)
 {
 	int a;

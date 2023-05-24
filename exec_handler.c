@@ -2,6 +2,7 @@
 /**
  * exec_handler - handles execution
  * @av: argument vector
+ * @envp: environment variables
  * Return: void;
  */
 void exec_handler(char **av, char **envp)

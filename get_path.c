@@ -12,26 +12,21 @@ char *get_path(char *cmd)
 
 	path = getenv("PATH");
 	cppath = strdup(path);
-
 	if (path)
 	{
 		token = strtok(cppath, ":");
-
 		while (token != NULL)
 		{
 			cmdlen = strlen(cmd);
 			pathlen = strlen(token);
 			cmdpath = malloc(cmdlen + pathlen + 2);
-
 			strcpy(cmdpath, token);
 			strcat(cmdpath, "/");
 			strcat(cmdpath, cmd);
 			strcat(cmdpath, "\0");
-
 			if (stat(cmdpath, &buf) == 0)
 			{
 				free(cppath);
-
 				return (cmdpath);
 			}
 			else
@@ -40,15 +35,12 @@ char *get_path(char *cmd)
 				token = strtok(NULL, ":");
 			}
 		}
-
 		free(cppath);
-
 		if (stat(cmd, &buf) == 0)
 		{
 			return (cmd);
 		}
 		return (NULL);
 	}
-
 	return (NULL);
 }
