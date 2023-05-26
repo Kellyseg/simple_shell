@@ -50,7 +50,7 @@ typedef struct list_of_str
 } liststr_t;
 
 /**
- *struct passarg - all arguments to pas into function 
+ *struct passarg - all arguments to pas into function
  *@a: getline string
  *@av: vector of string
  *@path: path to string
@@ -70,7 +70,7 @@ typedef struct list_of_str
  *@readfd: filedescriptor to read
  *@histlen: length of history
  */
-typedef struct passinfo
+typedef struct passarg
 {
 	char *a;
 	char **av;
