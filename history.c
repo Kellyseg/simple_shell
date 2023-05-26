@@ -14,13 +14,13 @@ char *get_history_file(arg_t *arg)
 	dir = _getenv(arg, "HOME=");
 	if (!dir)
 		return (NULL);
-	buffer = malloc(sizeof(char) * (_strlen(dir) + _strlen(HFILE) + 2));
+	buffer = malloc(sizeof(char) * (strlen(dir) + strlen(HFILE) + 2));
 	if (!buffer)
 		return (NULL);
 	buffer[0] = 0;
-	_strcpy(buffer, dir);
-	_strcat(buffer, "/");
-	_strcat(buffer, HFILE);
+	strcpy(buffer, dir);
+	strcat(buffer, "/");
+	strcat(buffer, HFILE);
 	return (buffer);
 }
 
