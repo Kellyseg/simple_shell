@@ -23,11 +23,12 @@ char *_getenv(arg_t *arg, const char *name)
 	liststr_t *node = arg->envp;
 	char *comp;
 
-	for (; node; node = node->next)
+	while (node)
 	{
 		comp = starts_with(node->str, name);
 		if (comp && *comp)
 			return (comp);
+		node = node->next;
 	}
 	return (NULL);
 }
