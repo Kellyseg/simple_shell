@@ -29,21 +29,19 @@ char *_strcpy(char *dest, char *src)
  */
 char *_strdup(const char *str)
 {
-	char *result;
-	int a, l;
+	int length = 0;
+	char *ret;
 
 	if (str == NULL)
-	return (NULL);
-
-	l = strlen(str);
-	result = (char *)malloc(sizeof(char) * (l + 1));
-	if (result == NULL)
-	return (NULL);
-	for (a = 0; a < l; a++)
-	{
-		result[a] = str[a];
-	}
-	return (result);
+		return (NULL);
+	while (*str++)
+		length++;
+	ret = malloc(sizeof(char) * (length + 1));
+	if (!ret)
+		return (NULL);
+	for (length++; length--;)
+		ret[length] = *--str;
+	return (ret);
 }
 
 /**
